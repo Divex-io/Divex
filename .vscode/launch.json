@@ -1,0 +1,33 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node-terminal",
+      "name": "Dev",
+      "request": "launch",
+      "command": "yarn run dev",
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "node-terminal",
+      "name": "Build",
+      "request": "launch",
+      "command": "yarn run build",
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "node-terminal",
+      "name": "Start",
+      "request": "launch",
+      "command": "yarn run start",
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "node-terminal",
+      "name": "Lint",
+      "request": "launch",
+      "command": "yarn run lint",
+      "cwd": "${workspaceFolder}"
+    }
+  ]
+}

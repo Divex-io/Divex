@@ -1,0 +1,289 @@
+{
+  "Brand": {
+    "name": "Divex"
+  },
+
+  "Index": {
+    "boilerplateName": "Divex",
+    "title": "Dive Deep Into Success",
+    "description": "Streamline your diving center operations with our comprehensive SaaS platform. Manage bookings, certifications, equipment, and customer relationships all in one place.",
+    "cloneRepository": "Clone Repository",
+    "leaveStar": "Leave a Star",
+    "howToUse": "How to Use",
+    "gettingStarted": "Getting Started",
+    "installation": "Installation",
+    "howToContribute": "How to Contribute",
+    "omitrtlUsage": "OmitRTL Usage",
+    "OmitRTLInstruction": "To use OmitRTL, simply wrap the component you want to omit RTL support for with the OmitRTL component.",
+    "contribute": "Contribute",
+    "installationSteps": {
+      "cloneRepository": "Clone the repository:",
+      "installDependencies": "Install dependencies:",
+      "startDevServer": "Start the development server:"
+    },
+    "contributeSteps": {
+      "fork": "Fork the repository",
+      "createBranch": "Create a new branch:",
+      "commit": "Commit your changes:",
+      "push": "Push to the branch:",
+      "pullRequest": "Create a new Pull Request"
+    },
+    "error": {
+      "server": "Internal Server Error",
+      "sorry": "Sorry, we encountered an unexpected issue on our server.",
+      "tryAgain": " Try again later.",
+      "returnHome": "Return home"
+    }
+  },
+
+  "Hero": {
+    "badge": "The Future of Dive Center Management",
+    "title": "Dive Deep",
+    "titleAccent": "Into Success",
+    "description": "Streamline your diving center operations with our comprehensive SaaS platform. Manage bookings, certifications, equipment, and customer relationships all in one place.",
+    "startFreeTrial": "Start Free Trial",
+    "watchDemo": "Watch Demo",
+    "stats": {
+      "diversManaged": "Divers Managed",
+      "diveSites": "Dive Sites",
+      "bookingsPerMonth": "Bookings/Month"
+    }
+  },
+
+  "Features": {
+    "badge": "Powerful Features",
+    "title": "Everything You Need to",
+    "titleAccent": " Manage Your Dive Center",
+    "description": "From booking management to safety compliance, our comprehensive platform streamlines every aspect of your diving business operations.",
+    "readyToStart": "Ready to get started? Try our 14-day free trial",
+    "moreFeatures": "Plus Many More Features",
+    "moreFeaturesDescription": "Our platform includes everything you need to run a successful diving business, with new features added regularly based on customer feedback.",
+    "features": {
+      "booking": {
+        "title": "Smart Booking System",
+        "description": "Automated scheduling with real-time availability, instant confirmations, and integrated payment processing."
+      },
+      "customers": {
+        "title": "Customer Management",
+        "description": "Comprehensive diver profiles, certification tracking, and personalized communication tools."
+      },
+      "safety": {
+        "title": "Safety & Compliance",
+        "description": "Digital logbooks, medical clearances, and automated safety checks to ensure regulatory compliance."
+      },
+      "analytics": {
+        "title": "Advanced Analytics",
+        "description": "Detailed insights into bookings, revenue, customer behavior, and operational efficiency."
+      },
+      "payment": {
+        "title": "Payment Processing",
+        "description": "Secure payment gateway with multiple options, automated invoicing, and refund management."
+      },
+      "mobile": {
+        "title": "Mobile App",
+        "description": "Native mobile apps for staff and customers with offline capabilities and push notifications."
+      }
+    },
+    "additionalFeatures": {
+      "equipment": "Equipment rental management",
+      "weather": "Weather integration",
+      "multilingual": "Multilingual support",
+      "mapping": "Dive site mapping",
+      "instructor": "Instructor scheduling",
+      "inventory": "Inventory tracking",
+      "discounts": "Group booking discounts",
+      "reminders": "Automated reminders"
+    }
+  },
+
+  "Pricing": {
+    "badge": "Simple Pricing",
+    "title": "Choose the Perfect Plan for",
+    "titleAccent": " Your Dive Center",
+    "description": "Start with our free trial and scale as your business grows. All plans include 24/7 support and regular feature updates.",
+    "plans": {
+      "starter": {
+        "name": "Starter",
+        "description": "Perfect for small dive shops and individual instructors",
+        "buttonText": "Start Free Trial",
+        "features": {
+          "bookings": "Up to 100 bookings/month",
+          "customers": "Basic customer management",
+          "booking": "Online booking system",
+          "payment": "Payment processing",
+          "mobile": "Mobile app access",
+          "support": "Email support",
+          "analytics": "Basic analytics"
+        }
+      },
+      "professional": {
+        "name": "Professional",
+        "description": "Ideal for growing dive centers with multiple locations",
+        "buttonText": "Start Free Trial",
+        "mostPopular": "Most Popular",
+        "features": {
+          "bookings": "Up to 500 bookings/month",
+          "customers": "Advanced customer profiles",
+          "locations": "Multi-location support",
+          "equipment": "Equipment rental management",
+          "staff": "Staff scheduling",
+          "support": "Priority email support",
+          "analytics": "Advanced analytics & reporting",
+          "api": "API access",
+          "branding": "Custom branding"
+        }
+      },
+      "enterprise": {
+        "name": "Enterprise",
+        "description": "For large dive centers and franchise operations",
+        "buttonText": "Contact Sales",
+        "features": {
+          "bookings": "Unlimited bookings",
+          "franchise": "Multi-franchise management",
+          "compliance": "Advanced safety compliance",
+          "integrations": "Custom integrations",
+          "manager": "Dedicated account manager",
+          "support": "24/7 phone support",
+          "reporting": "Custom reporting",
+          "whiteLabel": "White-label solution",
+          "security": "Advanced security features",
+          "training": "Training & onboarding"
+        }
+      }
+    },
+    "allPlansInclude": "All Plans Include",
+    "included": {
+      "trial": "14-day free trial",
+      "noSetup": "No setup fees",
+      "cancel": "Cancel anytime",
+      "migration": "Data migration help"
+    },
+    "questionsText": "Have questions about our pricing? ",
+    "contactSales": "Contact our sales team",
+    "enterpriseText": " for custom enterprise solutions."
+  },
+
+  "Testimonials": {
+    "badge": "Customer Stories",
+    "title": "Trusted by Dive Centers",
+    "titleAccent": " Worldwide",
+    "description": "See how dive centers around the world are growing their business and improving their operations with Divex.",
+    "readyToJoin": "Ready to Join Them?",
+    "joinDescription": "Start your free trial today and see why dive centers worldwide choose Divex to grow their business.",
+    "startFreeTrial": "Start Free Trial",
+    "scheduleDemo": "Schedule Demo",
+    "stats": {
+      "diveCenters": "Dive Centers",
+      "happyDivers": "Happy Divers",
+      "averageRating": "Average Rating",
+      "customerRetention": "Customer Retention"
+    },
+    "customers": {
+      "sarah": {
+        "name": "Sarah Mitchell",
+        "role": "Owner",
+        "company": "Blue Ocean Diving",
+        "location": "Maldives",
+        "text": "Divex has completely transformed our business operations. The booking system is intuitive, and our customers love the mobile app. We've seen a 40% increase in bookings since switching.",
+        "metric": "40% increase in bookings"
+      },
+      "marcus": {
+        "name": "Marcus Chen",
+        "role": "Operations Manager",
+        "company": "Coral Reef Adventures",
+        "location": "Thailand",
+        "text": "The safety compliance features are outstanding. Digital logbooks and automated safety checks have streamlined our operations while ensuring we meet all regulatory requirements.",
+        "metric": "100% compliance achieved"
+      },
+      "elena": {
+        "name": "Elena Rodriguez",
+        "role": "Dive Instructor",
+        "company": "Mediterranean Divers",
+        "location": "Spain",
+        "text": "As an instructor, I love how easy it is to manage my students' certifications and track their progress. The platform has made my job so much more efficient.",
+        "metric": "50% time savings"
+      },
+      "james": {
+        "name": "James Thompson",
+        "role": "CEO",
+        "company": "Pacific Dive Centers",
+        "location": "Australia",
+        "text": "Managing multiple locations was a nightmare before Divex. Now I can oversee all our centers from one dashboard. The analytics help us make data-driven decisions.",
+        "metric": "5 locations managed"
+      },
+      "fatima": {
+        "name": "Fatima Al-Zahra",
+        "role": "Business Owner",
+        "company": "Red Sea Diving",
+        "location": "Egypt",
+        "text": "The payment processing and automated invoicing have improved our cash flow significantly. No more chasing payments - everything is handled seamlessly.",
+        "metric": "30% faster payments"
+      },
+      "roberto": {
+        "name": "Roberto Silva",
+        "role": "Dive Shop Manager",
+        "company": "Caribbean Adventures",
+        "location": "Costa Rica",
+        "text": "Our customers appreciate the easy online booking system. The equipment rental integration has also helped us generate additional revenue streams.",
+        "metric": "25% revenue increase"
+      }
+    }
+  },
+
+  "CTA": {
+    "title": "Ready to Transform",
+    "titleAccent": "Your Dive Business?",
+    "description": "Join thousands of dive centers worldwide who trust Divex to streamline their operations and grow their business.",
+    "startFreeTrial": "Start Your Free Trial",
+    "scheduleDemo": "Schedule a Demo",
+    "trustedBy": "Trusted by 500+ Dive Centers Worldwide",
+    "trustedDescription": "From small dive shops to large franchise operations",
+    "benefits": {
+      "setup": "Setup in minutes, not weeks",
+      "security": "Bank-level security & compliance",
+      "trial": "14-day free trial, no credit card required",
+      "support": "24/7 dedicated support team"
+    },
+    "stats": {
+      "bookings": "Bookings Processed",
+      "uptime": "Uptime Guarantee",
+      "support": "Support Available",
+      "countries": "Countries Served"
+    }
+  },
+
+  "Navigation": {
+    "features": "Features",
+    "pricing": "Pricing",
+    "testimonials": "Testimonials",
+    "contact": "Contact"
+  },
+
+  "Footer": {
+    "description": "The complete SaaS solution for diving centers worldwide. Streamline operations, boost bookings, and grow your business.",
+    "product": "Product",
+    "support": "Support",
+    "company": "Company",
+    "links": {
+      "features": "Features",
+      "pricing": "Pricing",
+      "api": "API",
+      "integrations": "Integrations",
+      "helpCenter": "Help Center",
+      "contactUs": "Contact Us",
+      "status": "Status",
+      "security": "Security",
+      "about": "About",
+      "blog": "Blog",
+      "careers": "Careers",
+      "privacy": "Privacy"
+    },
+    "copyright": "© 2024 Divex. All rights reserved."
+  },
+
+  "Metadata": {
+    "title": "Divex - Complete SaaS Solution for Diving Centers",
+    "description": "Streamline your diving center operations with our comprehensive SaaS platform. Manage bookings, certifications, equipment, and customer relationships all in one place.",
+    "keywords": "diving center software, dive shop management, scuba diving bookings, dive center SaaS, diving equipment rental, dive instructor scheduling, diving safety compliance"
+  }
+}
