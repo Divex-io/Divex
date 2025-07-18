@@ -89,11 +89,11 @@ export default function FeaturesSection() {
   ];
 
   return (
-    <section className="py-20 bg-white dark:bg-gray-900">
+    <section className="py-16 md:py-20 bg-white dark:bg-gray-900">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-12 md:mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -107,21 +107,21 @@ export default function FeaturesSection() {
             {t("badge")}
           </motion.div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4 leading-tight">
             {t("title")}
             <span className="bg-gradient-to-r from-blue-600 via-cyan-600 to-teal-600 bg-clip-text text-transparent">
               {t("titleAccent")}
             </span>
           </h2>
 
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
             {t("description")}
           </p>
         </motion.div>
 
         {/* Main Features Grid */}
         <motion.div
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12 md:mb-16"
           variants={ANIMATION_VARIANTS.container}
           initial="hidden"
           whileInView="visible"
@@ -134,19 +134,19 @@ export default function FeaturesSection() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               <Card className="h-full border-0 shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer">
-                <CardContent className="p-6">
+                <CardContent className="p-4 md:p-6">
                   <motion.div
-                    className={`w-12 h-12 rounded-lg bg-gradient-to-r ${feature.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}
+                    className={`w-12 h-12 md:w-14 md:h-14 rounded-lg bg-gradient-to-r ${feature.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}
                     whileHover={{ rotate: 5 }}
                   >
-                    <feature.icon className="w-6 h-6 text-white" />
+                    <feature.icon className="w-6 h-6 md:w-7 md:h-7 text-white" />
                   </motion.div>
 
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
+                  <h3 className="text-lg md:text-xl font-semibold text-gray-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300 leading-tight">
                     {feature.title}
                   </h3>
 
-                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-sm md:text-base">
                     {feature.description}
                   </p>
                 </CardContent>
@@ -157,23 +157,23 @@ export default function FeaturesSection() {
 
         {/* Additional Features */}
         <motion.div
-          className="bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-blue-950/50 dark:to-cyan-950/50 rounded-2xl p-8 lg:p-12"
+          className="bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-blue-950/50 dark:to-cyan-950/50 rounded-2xl p-6 md:p-8 lg:p-12"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          <div className="text-center mb-8">
-            <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4">
+          <div className="text-center mb-6 md:mb-8">
+            <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-3 md:mb-4">
               {t("moreFeatures")}
             </h3>
-            <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+            <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto text-sm md:text-base leading-relaxed">
               {t("moreFeaturesDescription")}
             </p>
           </div>
 
           <motion.div
-            className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4"
             variants={ANIMATION_VARIANTS.container}
             initial="hidden"
             whileInView="visible"
@@ -182,13 +182,13 @@ export default function FeaturesSection() {
             {additionalFeatures.map((feature, index) => (
               <motion.div
                 key={feature}
-                className="flex items-center space-x-3 bg-white dark:bg-gray-800 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow duration-300"
+                className="flex items-center space-x-3 bg-white dark:bg-gray-800 rounded-lg p-3 md:p-4 shadow-sm hover:shadow-md transition-shadow duration-300"
                 variants={ANIMATION_VARIANTS.item}
                 transition={{ duration: 0.3, delay: index * 0.05 }}
                 whileHover={{ scale: 1.02 }}
               >
-                <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                <span className="text-gray-700 dark:text-gray-200 font-medium">
+                <CheckCircle className="w-4 h-4 md:w-5 md:h-5 text-green-500 flex-shrink-0" />
+                <span className="text-gray-700 dark:text-gray-200 font-medium text-sm md:text-base">
                   {feature}
                 </span>
               </motion.div>
@@ -198,18 +198,18 @@ export default function FeaturesSection() {
 
         {/* CTA */}
         <motion.div
-          className="text-center mt-16"
+          className="text-center mt-12 md:mt-16"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
           <motion.div
-            className="inline-flex items-center space-x-2 text-blue-600 dark:text-blue-400 font-medium"
+            className="inline-flex items-center space-x-2 text-blue-600 dark:text-blue-400 font-medium text-sm md:text-base"
             whileHover={{ x: 5 }}
             transition={{ duration: 0.2 }}
           >
-            <Clock className="w-5 h-5" />
+            <Clock className="w-4 h-4 md:w-5 md:h-5" />
             <span>{t("readyToStart")}</span>
           </motion.div>
         </motion.div>

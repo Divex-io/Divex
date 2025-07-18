@@ -6,68 +6,6 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { useTranslations } from "next-intl";
 
-const pricingPlans = [
-  {
-    name: "Starter",
-    price: 29,
-    period: "month",
-    description: "Perfect for small dive shops and individual instructors",
-    features: [
-      "Up to 100 bookings/month",
-      "Basic customer management",
-      "Online booking system",
-      "Payment processing",
-      "Mobile app access",
-      "Email support",
-      "Basic analytics",
-    ],
-    buttonText: "Start Free Trial",
-    popular: false,
-    color: "border-gray-200 dark:border-gray-700",
-  },
-  {
-    name: "Professional",
-    price: 79,
-    period: "month",
-    description: "Ideal for growing dive centers with multiple locations",
-    features: [
-      "Up to 500 bookings/month",
-      "Advanced customer profiles",
-      "Multi-location support",
-      "Equipment rental management",
-      "Staff scheduling",
-      "Priority email support",
-      "Advanced analytics & reporting",
-      "API access",
-      "Custom branding",
-    ],
-    buttonText: "Start Free Trial",
-    popular: true,
-    color: "border-blue-500",
-  },
-  {
-    name: "Enterprise",
-    price: 199,
-    period: "month",
-    description: "For large dive centers and franchise operations",
-    features: [
-      "Unlimited bookings",
-      "Multi-franchise management",
-      "Advanced safety compliance",
-      "Custom integrations",
-      "Dedicated account manager",
-      "24/7 phone support",
-      "Custom reporting",
-      "White-label solution",
-      "Advanced security features",
-      "Training & onboarding",
-    ],
-    buttonText: "Contact Sales",
-    popular: false,
-    color: "border-purple-500",
-  },
-];
-
 const ANIMATION_VARIANTS = {
   container: {
     hidden: { opacity: 0 },
@@ -152,12 +90,19 @@ export default function PricingSection() {
     },
   ];
 
+  const includedFeatures = [
+    t("included.trial"),
+    t("included.noSetup"),
+    t("included.cancel"),
+    t("included.migration"),
+  ];
+
   return (
-    <section className="py-20 bg-gray-50 dark:bg-gray-800">
+    <section className="py-16 md:py-20 bg-gray-50 dark:bg-gray-800">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-12 md:mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -168,26 +113,24 @@ export default function PricingSection() {
             whileHover={{ scale: 1.05 }}
           >
             <Zap className="w-4 h-4 me-2" />
-            Simple Pricing
+            {t("badge")}
           </motion.div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-            Choose the Perfect Plan for
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4 leading-tight">
+            {t("title")}
             <span className="bg-gradient-to-r from-blue-600 via-cyan-600 to-teal-600 bg-clip-text text-transparent">
-              {" "}
-              Your Dive Center
+              {t("titleAccent")}
             </span>
           </h2>
 
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Start with our free trial and scale as your business grows. All
-            plans include 24/7 support and regular feature updates.
+          <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+            {t("description")}
           </p>
         </motion.div>
 
         {/* Pricing Cards */}
         <motion.div
-          className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto"
           variants={ANIMATION_VARIANTS.container}
           initial="hidden"
           whileInView="visible"
@@ -202,31 +145,31 @@ export default function PricingSection() {
             >
               {plan.popular && (
                 <motion.div
-                  className="absolute -top-4 left-1/2 transform -translate-x-1/2"
+                  className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10"
                   initial={{ opacity: 0, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 + 0.3 }}
                 >
-                  <div className="bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-4 py-1 rounded-full text-sm font-medium flex items-center">
+                  <div className="bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-4 py-1 rounded-full text-sm font-medium flex items-center shadow-lg">
                     <Star className="w-4 h-4 me-1" />
-                    Most Popular
+                    {t("plans.professional.mostPopular")}
                   </div>
                 </motion.div>
               )}
 
               <Card
                 className={`h-full ${plan.color} ${
-                  plan.popular ? "border-2 scale-105" : "border"
+                  plan.popular ? "border-2 md:scale-105" : "border"
                 } shadow-lg hover:shadow-xl transition-all duration-300 group`}
               >
-                <CardHeader className="text-center pb-8">
-                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                <CardHeader className="text-center pb-6 md:pb-8">
+                  <h3 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-2">
                     {plan.name}
                   </h3>
 
                   <div className="mb-4">
-                    <span className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white">
+                    <span className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white">
                       ${plan.price}
                     </span>
                     <span className="text-gray-600 dark:text-gray-400 ms-2">
@@ -234,31 +177,31 @@ export default function PricingSection() {
                     </span>
                   </div>
 
-                  <p className="text-gray-600 dark:text-gray-300">
+                  <p className="text-gray-600 dark:text-gray-300 text-sm md:text-base leading-relaxed">
                     {plan.description}
                   </p>
                 </CardHeader>
 
-                <CardContent className="pt-0">
+                <CardContent className="pt-0 px-4 md:px-6">
                   <motion.div
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="mb-8"
+                    className="mb-6 md:mb-8"
                   >
                     <Button
-                      className={`w-full py-3 text-lg font-medium ${
+                      className={`w-full py-3 md:py-4 text-base md:text-lg font-medium ${
                         plan.popular
                           ? "bg-blue-600 hover:bg-blue-700 text-white shadow-lg"
                           : "bg-gray-900 hover:bg-gray-800 dark:bg-white dark:text-gray-900 dark:hover:bg-gray-100 text-white"
                       }`}
                     >
                       {plan.buttonText}
-                      <ArrowRight className="w-5 h-5 ms-2" />
+                      <ArrowRight className="w-4 h-4 md:w-5 md:h-5 ms-2" />
                     </Button>
                   </motion.div>
 
                   <div className="space-y-4">
-                    <h4 className="font-semibold text-gray-900 dark:text-white mb-3">
+                    <h4 className="font-semibold text-gray-900 dark:text-white mb-3 text-sm md:text-base">
                       Everything included:
                     </h4>
 
@@ -274,8 +217,8 @@ export default function PricingSection() {
                             delay: index * 0.1 + featureIndex * 0.05,
                           }}
                         >
-                          <Check className="w-5 h-5 text-green-500 mt-0.5 me-3 flex-shrink-0" />
-                          <span className="text-gray-600 dark:text-gray-300">
+                          <Check className="w-4 h-4 md:w-5 md:h-5 text-green-500 mt-0.5 me-3 flex-shrink-0" />
+                          <span className="text-gray-600 dark:text-gray-300 text-sm md:text-base leading-relaxed">
                             {feature}
                           </span>
                         </motion.li>
@@ -290,34 +233,29 @@ export default function PricingSection() {
 
         {/* Additional Info */}
         <motion.div
-          className="text-center mt-16"
+          className="text-center mt-12 md:mt-16"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <div className="bg-white dark:bg-gray-900 rounded-2xl p-8 max-w-4xl mx-auto shadow-lg">
-            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-              All Plans Include
+          <div className="bg-white dark:bg-gray-900 rounded-2xl p-6 md:p-8 max-w-4xl mx-auto shadow-lg">
+            <h3 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-4 md:mb-6">
+              {t("allPlansInclude")}
             </h3>
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {[
-                "14-day free trial",
-                "No setup fees",
-                "Cancel anytime",
-                "Data migration help",
-              ].map((item, index) => (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+              {includedFeatures.map((item, index) => (
                 <motion.div
                   key={item}
-                  className="flex items-center justify-center space-x-2"
+                  className="flex items-center justify-center space-x-2 p-2 md:p-0"
                   initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.5 + index * 0.1 }}
                 >
-                  <Check className="w-5 h-5 text-green-500" />
-                  <span className="text-gray-600 dark:text-gray-300 font-medium">
+                  <Check className="w-4 h-4 md:w-5 md:h-5 text-green-500 flex-shrink-0" />
+                  <span className="text-gray-600 dark:text-gray-300 font-medium text-sm md:text-base text-center">
                     {item}
                   </span>
                 </motion.div>
@@ -328,22 +266,22 @@ export default function PricingSection() {
 
         {/* FAQ Note */}
         <motion.div
-          className="text-center mt-12"
+          className="text-center mt-8 md:mt-12"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.6 }}
         >
-          <p className="text-gray-600 dark:text-gray-400">
-            Have questions about our pricing?{" "}
+          <p className="text-gray-600 dark:text-gray-400 text-sm md:text-base leading-relaxed max-w-2xl mx-auto">
+            {t("questionsText")}
             <motion.a
               href="#contact"
               className="text-blue-600 dark:text-blue-400 font-medium hover:underline"
               whileHover={{ scale: 1.05 }}
             >
-              Contact our sales team
-            </motion.a>{" "}
-            for custom enterprise solutions.
+              {t("contactSales")}
+            </motion.a>
+            {t("enterpriseText")}
           </p>
         </motion.div>
       </div>

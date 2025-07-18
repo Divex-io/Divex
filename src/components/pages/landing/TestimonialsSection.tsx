@@ -3,76 +3,7 @@
 import { motion } from "framer-motion";
 import { Star, Quote } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-
-const testimonials = [
-  {
-    name: "Sarah Mitchell",
-    role: "Owner",
-    company: "Blue Ocean Diving",
-    location: "Maldives",
-    image: "/api/placeholder/60/60",
-    rating: 5,
-    text: "DiveCenter Pro has completely transformed our business operations. The booking system is intuitive, and our customers love the mobile app. We've seen a 40% increase in bookings since switching.",
-    metric: "40% increase in bookings",
-  },
-  {
-    name: "Marcus Chen",
-    role: "Operations Manager",
-    company: "Coral Reef Adventures",
-    location: "Thailand",
-    image: "/api/placeholder/60/60",
-    rating: 5,
-    text: "The safety compliance features are outstanding. Digital logbooks and automated safety checks have streamlined our operations while ensuring we meet all regulatory requirements.",
-    metric: "100% compliance achieved",
-  },
-  {
-    name: "Elena Rodriguez",
-    role: "Dive Instructor",
-    company: "Mediterranean Divers",
-    location: "Spain",
-    image: "/api/placeholder/60/60",
-    rating: 5,
-    text: "As an instructor, I love how easy it is to manage my students' certifications and track their progress. The platform has made my job so much more efficient.",
-    metric: "50% time savings",
-  },
-  {
-    name: "James Thompson",
-    role: "CEO",
-    company: "Pacific Dive Centers",
-    location: "Australia",
-    image: "/api/placeholder/60/60",
-    rating: 5,
-    text: "Managing multiple locations was a nightmare before DiveCenter Pro. Now I can oversee all our centers from one dashboard. The analytics help us make data-driven decisions.",
-    metric: "5 locations managed",
-  },
-  {
-    name: "Fatima Al-Zahra",
-    role: "Business Owner",
-    company: "Red Sea Diving",
-    location: "Egypt",
-    image: "/api/placeholder/60/60",
-    rating: 5,
-    text: "The payment processing and automated invoicing have improved our cash flow significantly. No more chasing payments - everything is handled seamlessly.",
-    metric: "30% faster payments",
-  },
-  {
-    name: "Roberto Silva",
-    role: "Dive Shop Manager",
-    company: "Caribbean Adventures",
-    location: "Costa Rica",
-    image: "/api/placeholder/60/60",
-    rating: 5,
-    text: "Our customers appreciate the easy online booking system. The equipment rental integration has also helped us generate additional revenue streams.",
-    metric: "25% revenue increase",
-  },
-];
-
-const stats = [
-  { value: "500+", label: "Dive Centers" },
-  { value: "50K+", label: "Happy Divers" },
-  { value: "4.9/5", label: "Average Rating" },
-  { value: "99%", label: "Customer Retention" },
-];
+import { useTranslations } from "next-intl";
 
 const ANIMATION_VARIANTS = {
   container: {
@@ -94,6 +25,78 @@ const ANIMATION_VARIANTS = {
 };
 
 export default function TestimonialsSection() {
+  const t = useTranslations("Testimonials");
+
+  const stats = [
+    { value: "500+", label: t("stats.diveCenters") },
+    { value: "50K+", label: t("stats.happyDivers") },
+    { value: "4.9/5", label: t("stats.averageRating") },
+    { value: "99%", label: t("stats.customerRetention") },
+  ];
+
+  const testimonials = [
+    {
+      name: t("customers.sarah.name"),
+      role: t("customers.sarah.role"),
+      company: t("customers.sarah.company"),
+      location: t("customers.sarah.location"),
+      image: "/api/placeholder/60/60",
+      rating: 5,
+      text: t("customers.sarah.text"),
+      metric: t("customers.sarah.metric"),
+    },
+    {
+      name: t("customers.marcus.name"),
+      role: t("customers.marcus.role"),
+      company: t("customers.marcus.company"),
+      location: t("customers.marcus.location"),
+      image: "/api/placeholder/60/60",
+      rating: 5,
+      text: t("customers.marcus.text"),
+      metric: t("customers.marcus.metric"),
+    },
+    {
+      name: t("customers.elena.name"),
+      role: t("customers.elena.role"),
+      company: t("customers.elena.company"),
+      location: t("customers.elena.location"),
+      image: "/api/placeholder/60/60",
+      rating: 5,
+      text: t("customers.elena.text"),
+      metric: t("customers.elena.metric"),
+    },
+    {
+      name: t("customers.james.name"),
+      role: t("customers.james.role"),
+      company: t("customers.james.company"),
+      location: t("customers.james.location"),
+      image: "/api/placeholder/60/60",
+      rating: 5,
+      text: t("customers.james.text"),
+      metric: t("customers.james.metric"),
+    },
+    {
+      name: t("customers.fatima.name"),
+      role: t("customers.fatima.role"),
+      company: t("customers.fatima.company"),
+      location: t("customers.fatima.location"),
+      image: "/api/placeholder/60/60",
+      rating: 5,
+      text: t("customers.fatima.text"),
+      metric: t("customers.fatima.metric"),
+    },
+    {
+      name: t("customers.roberto.name"),
+      role: t("customers.roberto.role"),
+      company: t("customers.roberto.company"),
+      location: t("customers.roberto.location"),
+      image: "/api/placeholder/60/60",
+      rating: 5,
+      text: t("customers.roberto.text"),
+      metric: t("customers.roberto.metric"),
+    },
+  ];
+
   return (
     <section className="py-20 bg-white dark:bg-gray-900">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -110,20 +113,18 @@ export default function TestimonialsSection() {
             whileHover={{ scale: 1.05 }}
           >
             <Star className="w-4 h-4 me-2" />
-            Customer Stories
+            {t("badge")}
           </motion.div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-            Trusted by Dive Centers
+            {t("title")}
             <span className="bg-gradient-to-r from-blue-600 via-cyan-600 to-teal-600 bg-clip-text text-transparent">
-              {" "}
-              Worldwide
+              {t("titleAccent")}
             </span>
           </h2>
 
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            See how dive centers around the world are growing their business and
-            improving their operations with DiveCenter Pro.
+            {t("description")}
           </p>
         </motion.div>
 
@@ -263,7 +264,7 @@ export default function TestimonialsSection() {
               viewport={{ once: true }}
               transition={{ delay: 0.5 }}
             >
-              Ready to Join Them?
+              {t("readyToJoin")}
             </motion.h3>
 
             <motion.p
@@ -273,8 +274,7 @@ export default function TestimonialsSection() {
               viewport={{ once: true }}
               transition={{ delay: 0.6 }}
             >
-              Start your free trial today and see why dive centers worldwide
-              choose DiveCenter Pro to grow their business.
+              {t("joinDescription")}
             </motion.p>
 
             <motion.div
@@ -289,7 +289,7 @@ export default function TestimonialsSection() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Start Free Trial
+                {t("startFreeTrial")}
               </motion.button>
 
               <motion.button
@@ -297,7 +297,7 @@ export default function TestimonialsSection() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Schedule Demo
+                {t("scheduleDemo")}
               </motion.button>
             </motion.div>
           </div>

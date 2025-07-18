@@ -64,13 +64,13 @@ export default function HeroSection() {
 
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
-          className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center"
+          className="grid lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 items-center"
           variants={ANIMATION_VARIANTS.container}
           initial="hidden"
           animate="visible"
         >
           {/* Content */}
-          <div className="text-center lg:text-start space-y-8">
+          <div className="text-center lg:text-start space-y-6 md:space-y-8">
             <motion.div
               variants={ANIMATION_VARIANTS.item}
               className="space-y-4"
@@ -84,7 +84,7 @@ export default function HeroSection() {
                 {t("badge")}
               </motion.div>
 
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
                 <span className="bg-gradient-to-r from-blue-600 via-cyan-600 to-teal-600 bg-clip-text text-transparent">
                   {t("title")}
                 </span>
@@ -94,7 +94,7 @@ export default function HeroSection() {
                 </span>
               </h1>
 
-              <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+              <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
                 {t("description")}
               </p>
             </motion.div>
@@ -109,7 +109,7 @@ export default function HeroSection() {
               >
                 <Button
                   size="lg"
-                  className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-lg shadow-lg"
+                  className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white px-6 md:px-8 py-3 md:py-4 text-base md:text-lg shadow-lg"
                 >
                   {t("startFreeTrial")}
                 </Button>
@@ -122,7 +122,7 @@ export default function HeroSection() {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="px-8 py-3 text-lg border-2"
+                  className="w-full sm:w-auto px-6 md:px-8 py-3 md:py-4 text-base md:text-lg border-2"
                 >
                   {t("watchDemo")}
                 </Button>
@@ -132,7 +132,7 @@ export default function HeroSection() {
             {/* Stats */}
             <motion.div
               variants={ANIMATION_VARIANTS.item}
-              className="grid grid-cols-3 gap-6 pt-8 border-t border-gray-200 dark:border-gray-700"
+              className="grid grid-cols-3 gap-4 md:gap-6 pt-6 md:pt-8 border-t border-gray-200 dark:border-gray-700"
             >
               {stats.map((stat, index) => (
                 <motion.div
@@ -142,11 +142,11 @@ export default function HeroSection() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.8 + index * 0.1 }}
                 >
-                  <stat.icon className="w-6 h-6 mx-auto mb-2 text-blue-600" />
-                  <div className="text-2xl font-bold text-gray-900 dark:text-white">
+                  <stat.icon className="w-5 h-5 md:w-6 md:h-6 mx-auto mb-2 text-blue-600" />
+                  <div className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white">
                     {stat.value}
                   </div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">
+                  <div className="text-xs md:text-sm text-gray-600 dark:text-gray-400 leading-tight">
                     {stat.label}
                   </div>
                 </motion.div>
@@ -155,34 +155,37 @@ export default function HeroSection() {
           </div>
 
           {/* Illustration */}
-          <motion.div className="relative" variants={ANIMATION_VARIANTS.item}>
+          <motion.div
+            className="relative mt-8 lg:mt-0"
+            variants={ANIMATION_VARIANTS.item}
+          >
             <motion.div
               className="relative z-10"
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 3, repeat: Infinity }}
             >
               {/* Main Dashboard Mockup */}
-              <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-6 transform rotate-3 hover:rotate-0 transition-transform duration-500">
+              <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-4 md:p-6 transform rotate-3 hover:rotate-0 transition-transform duration-500">
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center space-x-2">
                     <div className="w-3 h-3 bg-red-400 rounded-full"></div>
                     <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
                     <div className="w-3 h-3 bg-green-400 rounded-full"></div>
                   </div>
-                  <div className="text-sm text-gray-500">DiveCenter Pro</div>
+                  <div className="text-xs md:text-sm text-gray-500">Divex</div>
                 </div>
 
                 <div className="space-y-4">
-                  <div className="h-4 bg-gradient-to-r from-blue-400 to-cyan-400 rounded w-3/4"></div>
-                  <div className="h-3 bg-gray-200 dark:bg-gray-700 rounded w-1/2"></div>
-                  <div className="h-3 bg-gray-200 dark:bg-gray-700 rounded w-2/3"></div>
+                  <div className="h-3 md:h-4 bg-gradient-to-r from-blue-400 to-cyan-400 rounded w-3/4"></div>
+                  <div className="h-2 md:h-3 bg-gray-200 dark:bg-gray-700 rounded w-1/2"></div>
+                  <div className="h-2 md:h-3 bg-gray-200 dark:bg-gray-700 rounded w-2/3"></div>
 
-                  <div className="grid grid-cols-2 gap-4 mt-6">
-                    <div className="h-20 bg-gradient-to-br from-blue-100 to-cyan-100 dark:from-blue-900 dark:to-cyan-900 rounded-lg flex items-center justify-center">
-                      <Users className="w-8 h-8 text-blue-600" />
+                  <div className="grid grid-cols-2 gap-3 md:gap-4 mt-4 md:mt-6">
+                    <div className="h-16 md:h-20 bg-gradient-to-br from-blue-100 to-cyan-100 dark:from-blue-900 dark:to-cyan-900 rounded-lg flex items-center justify-center">
+                      <Users className="w-6 h-6 md:w-8 md:h-8 text-blue-600" />
                     </div>
-                    <div className="h-20 bg-gradient-to-br from-teal-100 to-green-100 dark:from-teal-900 dark:to-green-900 rounded-lg flex items-center justify-center">
-                      <Calendar className="w-8 h-8 text-teal-600" />
+                    <div className="h-16 md:h-20 bg-gradient-to-br from-teal-100 to-green-100 dark:from-teal-900 dark:to-green-900 rounded-lg flex items-center justify-center">
+                      <Calendar className="w-6 h-6 md:w-8 md:h-8 text-teal-600" />
                     </div>
                   </div>
                 </div>
@@ -191,7 +194,7 @@ export default function HeroSection() {
 
             {/* Floating Elements */}
             <motion.div
-              className="absolute -top-6 -right-6 w-16 h-16 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full flex items-center justify-center shadow-lg"
+              className="absolute -top-4 md:-top-6 -right-4 md:-right-6 w-12 h-12 md:w-16 md:h-16 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full flex items-center justify-center shadow-lg"
               animate={{
                 y: [0, -15, 0],
                 rotate: [0, 360],
@@ -201,11 +204,11 @@ export default function HeroSection() {
                 rotate: { duration: 8, repeat: Infinity, ease: "linear" },
               }}
             >
-              <Waves className="w-8 h-8 text-white" />
+              <Waves className="w-6 h-6 md:w-8 md:h-8 text-white" />
             </motion.div>
 
             <motion.div
-              className="absolute -bottom-4 -left-4 w-12 h-12 bg-gradient-to-r from-teal-400 to-green-400 rounded-full flex items-center justify-center shadow-lg"
+              className="absolute -bottom-2 md:-bottom-4 -left-2 md:-left-4 w-8 h-8 md:w-12 md:h-12 bg-gradient-to-r from-teal-400 to-green-400 rounded-full flex items-center justify-center shadow-lg"
               animate={{
                 y: [0, 10, 0],
                 x: [0, 5, 0],
@@ -217,7 +220,7 @@ export default function HeroSection() {
                 delay: 1,
               }}
             >
-              <MapPin className="w-6 h-6 text-white" />
+              <MapPin className="w-4 h-4 md:w-6 md:h-6 text-white" />
             </motion.div>
           </motion.div>
         </motion.div>

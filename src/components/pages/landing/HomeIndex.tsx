@@ -1,12 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Link from "next/link";
 import { useTranslations } from "next-intl";
 
-import { ModeToggle } from "@/components/ModeToggle";
-import LanguageSwitcher from "@/components/LanguageSwitcher";
 import Logo from "@/components/common/Logo";
+import Navbar from "@/components/common/Navbar";
 
 // Import all the new section components
 import HeroSection from "@/components/pages/landing/HeroSection";
@@ -17,78 +15,12 @@ import CTASection from "@/components/pages/landing/CTASection";
 
 export default function HomeIndex() {
   const t = useTranslations("Index");
-  const nav = useTranslations("Navigation");
   const footer = useTranslations("Footer");
 
   return (
     <div className="flex flex-col min-h-screen">
       {/* Header */}
-      <motion.header
-        initial={{ opacity: 0, y: -10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.4 }}
-        className="fixed top-0 w-full z-50 border-b backdrop-blur-sm bg-background/95 flex-shrink-0"
-      >
-        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="h-16 flex items-center justify-between">
-            <motion.div
-              whileHover={{ scale: 1.02 }}
-              transition={{ duration: 0.2 }}
-            >
-              <Logo variant="full" size="lg" href="#" animated={true} />
-            </motion.div>
-
-            {/* Navigation */}
-            <nav className="hidden md:flex items-center space-x-8">
-              <motion.a
-                href="#features"
-                className="text-gray-600 hover:text-blue-600 transition-colors duration-300 font-medium"
-                whileHover={{ scale: 1.05 }}
-              >
-                {nav("features")}
-              </motion.a>
-              <motion.a
-                href="#pricing"
-                className="text-gray-600 hover:text-blue-600 transition-colors duration-300 font-medium"
-                whileHover={{ scale: 1.05 }}
-              >
-                {nav("pricing")}
-              </motion.a>
-              <motion.a
-                href="#testimonials"
-                className="text-gray-600 hover:text-blue-600 transition-colors duration-300 font-medium"
-                whileHover={{ scale: 1.05 }}
-              >
-                {nav("testimonials")}
-              </motion.a>
-              <motion.a
-                href="#contact"
-                className="text-gray-600 hover:text-blue-600 transition-colors duration-300 font-medium"
-                whileHover={{ scale: 1.05 }}
-              >
-                {nav("contact")}
-              </motion.a>
-            </nav>
-
-            <div className="flex items-center gap-3">
-              <motion.div
-                initial={{ opacity: 0, x: 10 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.2, duration: 0.3 }}
-              >
-                <LanguageSwitcher />
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, x: 10 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.3, duration: 0.3 }}
-              >
-                <ModeToggle />
-              </motion.div>
-            </div>
-          </div>
-        </div>
-      </motion.header>
+      <Navbar />
 
       {/* Main Content */}
       <main className="pt-16">
@@ -122,14 +54,14 @@ export default function HomeIndex() {
         transition={{ duration: 0.4, delay: 0.6 }}
       >
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="py-8">
-            <div className="grid md:grid-cols-4 gap-8">
+          <div className="py-8 lg:py-12">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
               {/* Company Info */}
-              <div className="md:col-span-1">
+              <div className="sm:col-span-2 lg:col-span-1">
                 <div className="mb-4">
                   <Logo variant="full" size="md" animated={false} />
                 </div>
-                <p className="text-gray-600 dark:text-gray-400 text-sm">
+                <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
                   {footer("description")}
                 </p>
               </div>
@@ -137,15 +69,15 @@ export default function HomeIndex() {
               {/* Product Links */}
               <div>
                 <h3 className="font-semibold text-gray-900 dark:text-white mb-4">
-                  Product
+                  {footer("product")}
                 </h3>
-                <ul className="space-y-2 text-sm">
+                <ul className="space-y-3 text-sm">
                   <li>
                     <a
                       href="#features"
                       className="text-gray-600 dark:text-gray-400 hover:text-blue-600 transition-colors"
                     >
-                      Features
+                      {footer("links.features")}
                     </a>
                   </li>
                   <li>
@@ -153,7 +85,7 @@ export default function HomeIndex() {
                       href="#pricing"
                       className="text-gray-600 dark:text-gray-400 hover:text-blue-600 transition-colors"
                     >
-                      Pricing
+                      {footer("links.pricing")}
                     </a>
                   </li>
                   <li>
@@ -161,7 +93,7 @@ export default function HomeIndex() {
                       href="#"
                       className="text-gray-600 dark:text-gray-400 hover:text-blue-600 transition-colors"
                     >
-                      API
+                      {footer("links.api")}
                     </a>
                   </li>
                   <li>
@@ -169,7 +101,7 @@ export default function HomeIndex() {
                       href="#"
                       className="text-gray-600 dark:text-gray-400 hover:text-blue-600 transition-colors"
                     >
-                      Integrations
+                      {footer("links.integrations")}
                     </a>
                   </li>
                 </ul>
@@ -178,15 +110,15 @@ export default function HomeIndex() {
               {/* Support Links */}
               <div>
                 <h3 className="font-semibold text-gray-900 dark:text-white mb-4">
-                  Support
+                  {footer("support")}
                 </h3>
-                <ul className="space-y-2 text-sm">
+                <ul className="space-y-3 text-sm">
                   <li>
                     <a
                       href="#"
                       className="text-gray-600 dark:text-gray-400 hover:text-blue-600 transition-colors"
                     >
-                      Help Center
+                      {footer("links.helpCenter")}
                     </a>
                   </li>
                   <li>
@@ -194,7 +126,7 @@ export default function HomeIndex() {
                       href="#"
                       className="text-gray-600 dark:text-gray-400 hover:text-blue-600 transition-colors"
                     >
-                      Contact Us
+                      {footer("links.contactUs")}
                     </a>
                   </li>
                   <li>
@@ -202,7 +134,7 @@ export default function HomeIndex() {
                       href="#"
                       className="text-gray-600 dark:text-gray-400 hover:text-blue-600 transition-colors"
                     >
-                      Status
+                      {footer("links.status")}
                     </a>
                   </li>
                   <li>
@@ -210,7 +142,7 @@ export default function HomeIndex() {
                       href="#"
                       className="text-gray-600 dark:text-gray-400 hover:text-blue-600 transition-colors"
                     >
-                      Security
+                      {footer("links.security")}
                     </a>
                   </li>
                 </ul>
@@ -219,15 +151,15 @@ export default function HomeIndex() {
               {/* Company Links */}
               <div>
                 <h3 className="font-semibold text-gray-900 dark:text-white mb-4">
-                  Company
+                  {footer("company")}
                 </h3>
-                <ul className="space-y-2 text-sm">
+                <ul className="space-y-3 text-sm">
                   <li>
                     <a
                       href="#"
                       className="text-gray-600 dark:text-gray-400 hover:text-blue-600 transition-colors"
                     >
-                      About
+                      {footer("links.about")}
                     </a>
                   </li>
                   <li>
@@ -235,7 +167,7 @@ export default function HomeIndex() {
                       href="#"
                       className="text-gray-600 dark:text-gray-400 hover:text-blue-600 transition-colors"
                     >
-                      Blog
+                      {footer("links.blog")}
                     </a>
                   </li>
                   <li>
@@ -243,7 +175,7 @@ export default function HomeIndex() {
                       href="#"
                       className="text-gray-600 dark:text-gray-400 hover:text-blue-600 transition-colors"
                     >
-                      Careers
+                      {footer("links.careers")}
                     </a>
                   </li>
                   <li>
@@ -251,23 +183,23 @@ export default function HomeIndex() {
                       href="#"
                       className="text-gray-600 dark:text-gray-400 hover:text-blue-600 transition-colors"
                     >
-                      Privacy
+                      {footer("links.privacy")}
                     </a>
                   </li>
                 </ul>
               </div>
             </div>
 
-            <div className="border-t border-gray-200 dark:border-gray-700 mt-8 pt-8 flex flex-col sm:flex-row justify-between items-center">
-              <p className="text-sm text-gray-600 dark:text-gray-400">
+            <div className="border-t border-gray-200 dark:border-gray-700 mt-8 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+              <p className="text-sm text-gray-600 dark:text-gray-400 text-center sm:text-start">
                 {footer("copyright")}
               </p>
-              <div className="flex space-x-6 mt-4 sm:mt-0">
+              <div className="flex space-x-6">
                 <a
                   href="#"
-                  className="text-gray-400 hover:text-blue-600 transition-colors"
+                  className="text-gray-400 hover:text-blue-600 transition-colors p-2"
+                  aria-label="Facebook"
                 >
-                  <span className="sr-only">Facebook</span>
                   <svg
                     className="h-5 w-5"
                     fill="currentColor"
@@ -282,9 +214,9 @@ export default function HomeIndex() {
                 </a>
                 <a
                   href="#"
-                  className="text-gray-400 hover:text-blue-600 transition-colors"
+                  className="text-gray-400 hover:text-blue-600 transition-colors p-2"
+                  aria-label="Twitter"
                 >
-                  <span className="sr-only">Twitter</span>
                   <svg
                     className="h-5 w-5"
                     fill="currentColor"
@@ -295,9 +227,9 @@ export default function HomeIndex() {
                 </a>
                 <a
                   href="#"
-                  className="text-gray-400 hover:text-blue-600 transition-colors"
+                  className="text-gray-400 hover:text-blue-600 transition-colors p-2"
+                  aria-label="LinkedIn"
                 >
-                  <span className="sr-only">LinkedIn</span>
                   <svg
                     className="h-5 w-5"
                     fill="currentColor"
