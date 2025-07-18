@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Waves, MapPin, Users, Calendar } from "lucide-react";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
+import WateryBackground from "@/components/common/WateryBackground";
 
 const ANIMATION_VARIANTS = {
   container: {
@@ -36,31 +37,8 @@ export default function HeroSection() {
   ];
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-50 via-cyan-50 to-teal-50 dark:from-slate-900 dark:via-blue-950 dark:to-cyan-950 transition-colors duration-300">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10 dark:opacity-20 transition-opacity duration-300">
-        <svg
-          className="w-full h-full"
-          viewBox="0 0 100 100"
-          preserveAspectRatio="none"
-        >
-          <defs>
-            <pattern
-              id="waves"
-              x="0"
-              y="0"
-              width="100"
-              height="20"
-              patternUnits="userSpaceOnUse"
-            >
-              <path
-                d="M0 10 Q25 0 50 10 T100 10 V20 H0 Z"
-                fill="currentColor"
-              />
-            </pattern>
-          </defs>
-          <rect width="100" height="100" fill="url(#waves)" />
-        </svg>
-      </div>
+      {/* Background Pattern - Watery Effect */}
+      <WateryBackground id="hero" />
 
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div

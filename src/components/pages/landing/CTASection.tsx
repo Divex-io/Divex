@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTranslations } from "next-intl";
+import WateryBackground from "@/components/common/WateryBackground";
 
 const ANIMATION_VARIANTS = {
   container: {
@@ -57,35 +58,12 @@ export default function CTASection() {
   return (
     <section className="py-16 md:py-20 bg-gradient-to-br from-blue-600 via-cyan-600 to-teal-600 dark:from-blue-700 dark:via-cyan-700 dark:to-teal-700 relative overflow-hidden transition-colors duration-300">
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-20 dark:opacity-30 transition-opacity duration-300">
-        <svg
-          className="w-full h-full"
-          viewBox="0 0 100 100"
-          preserveAspectRatio="none"
-        >
-          <defs>
-            <pattern
-              id="cta-waves"
-              x="0"
-              y="0"
-              width="100"
-              height="20"
-              patternUnits="userSpaceOnUse"
-            >
-              <path
-                d="M0 10 Q25 0 50 10 T100 10 V20 H0 Z"
-                fill="currentColor"
-              />
-            </pattern>
-          </defs>
-          <rect
-            width="100"
-            height="100"
-            fill="url(#cta-waves)"
-            className="text-white dark:text-white/80 transition-colors duration-300"
-          />
-        </svg>
-      </div>
+      <WateryBackground
+        id="cta"
+        opacity="opacity-20"
+        darkOpacity="dark:opacity-30"
+        className="text-white dark:text-white/80"
+      />
 
       {/* Floating Elements */}
       <motion.div
