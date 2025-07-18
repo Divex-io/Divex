@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Star, Quote } from "lucide-react";
+import { Star, Quote, TrendingUp, MapPin } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { useTranslations } from "next-intl";
 
@@ -210,8 +210,9 @@ export default function TestimonialsSection() {
                     whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.2 }}
                   >
-                    <div className="text-blue-700 dark:text-blue-300 font-semibold text-center transition-colors duration-300">
-                      📈 {testimonial.metric}
+                    <div className="text-blue-700 dark:text-blue-300 font-semibold text-center transition-colors duration-300 flex items-center justify-center gap-2">
+                      <TrendingUp className="w-4 h-4" />
+                      {testimonial.metric}
                     </div>
                   </motion.div>
 
@@ -237,8 +238,9 @@ export default function TestimonialsSection() {
                       <div className="text-sm text-gray-600 dark:text-gray-400 transition-colors duration-300">
                         {testimonial.role}, {testimonial.company}
                       </div>
-                      <div className="text-sm text-blue-600 dark:text-blue-400 transition-colors duration-300">
-                        📍 {testimonial.location}
+                      <div className="text-sm text-blue-600 dark:text-blue-400 transition-colors duration-300 flex items-center gap-1">
+                        <MapPin className="w-3 h-3" />
+                        {testimonial.location}
                       </div>
                     </div>
                   </div>

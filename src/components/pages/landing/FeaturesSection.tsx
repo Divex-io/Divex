@@ -8,7 +8,6 @@ import {
   BarChart3,
   CreditCard,
   Smartphone,
-  MapPin,
   Waves,
   CheckCircle,
   Clock,
