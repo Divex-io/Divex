@@ -145,14 +145,14 @@ export default function PricingSection() {
             >
               {plan.popular && (
                 <motion.div
-                  className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10"
+                  className="absolute -top-8 z-10"
                   initial={{ opacity: 0, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 + 0.3 }}
                 >
-                  <div className="bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-4 py-1 rounded-full text-sm font-medium flex items-center shadow-lg">
-                    <Star className="w-4 h-4 me-1" />
+                  <div className="bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-3 md:px-4 py-1 rounded-full text-xs md:text-sm font-medium flex items-center shadow-lg">
+                    <Star className="w-3 h-3 md:w-4 md:h-4 me-1" />
                     {t("plans.professional.mostPopular")}
                   </div>
                 </motion.div>
