@@ -55,9 +55,9 @@ export default function CTASection() {
     },
   ];
   return (
-    <section className="py-16 md:py-20 bg-gradient-to-br from-blue-600 via-cyan-600 to-teal-600 relative overflow-hidden">
+    <section className="py-16 md:py-20 bg-gradient-to-br from-blue-600 via-cyan-600 to-teal-600 dark:from-blue-700 dark:via-cyan-700 dark:to-teal-700 relative overflow-hidden transition-colors duration-300">
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-20">
+      <div className="absolute inset-0 opacity-20 dark:opacity-30 transition-opacity duration-300">
         <svg
           className="w-full h-full"
           viewBox="0 0 100 100"
@@ -82,14 +82,14 @@ export default function CTASection() {
             width="100"
             height="100"
             fill="url(#cta-waves)"
-            className="text-white"
+            className="text-white dark:text-white/80 transition-colors duration-300"
           />
         </svg>
       </div>
 
       {/* Floating Elements */}
       <motion.div
-        className="absolute top-20 left-10 w-16 h-16 md:w-20 md:h-20 bg-white/10 rounded-full"
+        className="absolute top-20 left-10 w-16 h-16 md:w-20 md:h-20 bg-white/10 dark:bg-white/5 rounded-full transition-colors duration-300"
         animate={{
           y: [0, -20, 0],
           x: [0, 10, 0],
@@ -102,7 +102,7 @@ export default function CTASection() {
       />
 
       <motion.div
-        className="absolute bottom-20 right-10 w-12 h-12 md:w-16 md:h-16 bg-white/10 rounded-full"
+        className="absolute bottom-20 right-10 w-12 h-12 md:w-16 md:h-16 bg-white/10 dark:bg-white/5 rounded-full transition-colors duration-300"
         animate={{
           y: [0, 15, 0],
           x: [0, -15, 0],
@@ -116,7 +116,7 @@ export default function CTASection() {
       />
 
       <motion.div
-        className="absolute top-1/2 right-20 w-8 h-8 md:w-12 md:h-12 bg-white/10 rounded-full"
+        className="absolute top-1/2 right-20 w-8 h-8 md:w-12 md:h-12 bg-white/10 dark:bg-white/5 rounded-full transition-colors duration-300"
         animate={{
           scale: [1, 1.2, 1],
           rotate: [0, 180, 360],
@@ -145,7 +145,7 @@ export default function CTASection() {
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
               {t("title")}
               <br />
-              <span className="bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-yellow-300 to-orange-300 dark:from-yellow-200 dark:to-orange-200 bg-clip-text text-transparent transition-all duration-300">
                 {t("titleAccent")}
               </span>
             </h2>
@@ -153,7 +153,7 @@ export default function CTASection() {
 
           {/* Subtitle */}
           <motion.p
-            className="text-lg md:text-xl lg:text-2xl text-blue-100 mb-8 md:mb-12 max-w-3xl mx-auto leading-relaxed px-4"
+            className="text-lg md:text-xl lg:text-2xl text-blue-100 dark:text-blue-50 mb-8 md:mb-12 max-w-3xl mx-auto leading-relaxed px-4 transition-colors duration-300"
             variants={ANIMATION_VARIANTS.item}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
@@ -176,13 +176,13 @@ export default function CTASection() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
                 <motion.div
-                  className="w-12 h-12 md:w-16 md:h-16 bg-white/20 rounded-full flex items-center justify-center mb-3 md:mb-4 backdrop-blur-sm"
+                  className="w-12 h-12 md:w-16 md:h-16 bg-white/20 dark:bg-white/15 rounded-full flex items-center justify-center mb-3 md:mb-4 backdrop-blur-sm border border-white/10 dark:border-white/5 transition-all duration-300"
                   whileHover={{ scale: 1.1, rotate: 5 }}
                   transition={{ duration: 0.3 }}
                 >
                   <benefit.icon className="w-6 h-6 md:w-8 md:h-8 text-white" />
                 </motion.div>
-                <p className="text-white font-medium text-sm md:text-base leading-tight px-2">
+                <p className="text-white dark:text-gray-100 font-medium text-sm md:text-base leading-tight px-2 transition-colors duration-300">
                   {benefit.text}
                 </p>
               </motion.div>
@@ -198,7 +198,7 @@ export default function CTASection() {
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button
                 size="lg"
-                className="w-full sm:w-auto bg-white text-blue-600 hover:bg-gray-100 px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 group"
+                className="w-full sm:w-auto bg-white text-blue-600 hover:bg-gray-50 dark:hover:bg-gray-100 px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 group"
               >
                 {t("startFreeTrial")}
                 <motion.div
@@ -224,7 +224,7 @@ export default function CTASection() {
 
           {/* Trust Indicators */}
           <motion.div
-            className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 md:p-8 max-w-4xl mx-auto"
+            className="bg-white/10 dark:bg-white/5 backdrop-blur-sm border border-white/20 dark:border-white/10 rounded-2xl p-6 md:p-8 max-w-4xl mx-auto transition-all duration-300"
             variants={ANIMATION_VARIANTS.item}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
@@ -232,7 +232,7 @@ export default function CTASection() {
               <h3 className="text-xl md:text-2xl font-bold text-white mb-2">
                 {t("trustedBy")}
               </h3>
-              <p className="text-blue-100 text-sm md:text-base">
+              <p className="text-blue-100 dark:text-blue-50 text-sm md:text-base transition-colors duration-300">
                 {t("trustedDescription")}
               </p>
             </div>
@@ -254,7 +254,7 @@ export default function CTASection() {
                   <div className="text-2xl md:text-3xl font-bold text-white mb-1">
                     {stat.number}
                   </div>
-                  <div className="text-blue-100 text-xs md:text-sm">
+                  <div className="text-blue-100 dark:text-blue-50 text-xs md:text-sm transition-colors duration-300">
                     {stat.label}
                   </div>
                 </motion.div>
@@ -268,17 +268,17 @@ export default function CTASection() {
             variants={ANIMATION_VARIANTS.item}
             transition={{ duration: 0.6, delay: 0.5 }}
           >
-            <div className="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-4 md:gap-6 text-blue-100 text-sm md:text-base lg:text-lg px-4">
+            <div className="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-4 md:gap-6 text-blue-100 dark:text-blue-50 text-sm md:text-base lg:text-lg px-4 transition-colors duration-300">
               <div className="flex items-center gap-2">
-                <Target className="w-4 h-4 md:w-5 md:h-5 text-yellow-300 flex-shrink-0" />
+                <Target className="w-4 h-4 md:w-5 md:h-5 text-yellow-300 dark:text-yellow-200 flex-shrink-0 transition-colors duration-300" />
                 <span>No credit card required</span>
               </div>
               <div className="flex items-center gap-2">
-                <Lock className="w-4 h-4 md:w-5 md:h-5 text-green-300 flex-shrink-0" />
+                <Lock className="w-4 h-4 md:w-5 md:h-5 text-green-300 dark:text-green-200 flex-shrink-0 transition-colors duration-300" />
                 <span>Cancel anytime</span>
               </div>
               <div className="flex items-center gap-2">
-                <Phone className="w-4 h-4 md:w-5 md:h-5 text-blue-300 flex-shrink-0" />
+                <Phone className="w-4 h-4 md:w-5 md:h-5 text-blue-300 dark:text-blue-200 flex-shrink-0 transition-colors duration-300" />
                 <span>Setup assistance included</span>
               </div>
             </div>

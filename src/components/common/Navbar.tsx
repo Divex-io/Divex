@@ -26,7 +26,7 @@ export default function Navbar() {
       initial={{ opacity: 0, y: -10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4 }}
-      className="fixed top-0 w-full z-50 border-b backdrop-blur-sm bg-background/95 flex-shrink-0"
+      className="fixed top-0 w-full z-50 border-b border-gray-200 dark:border-gray-700 backdrop-blur-sm bg-white/95 dark:bg-gray-800/95 flex-shrink-0 transition-colors duration-300"
     >
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="h-16 flex items-center justify-between">
@@ -41,28 +41,28 @@ export default function Navbar() {
           <nav className="hidden md:flex items-center space-x-8">
             <motion.a
               href="#features"
-              className="text-gray-600 hover:text-blue-600 transition-colors duration-300 font-medium"
+              className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300 font-medium"
               whileHover={{ scale: 1.05 }}
             >
               {nav("features")}
             </motion.a>
             <motion.a
               href="#pricing"
-              className="text-gray-600 hover:text-blue-600 transition-colors duration-300 font-medium"
+              className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300 font-medium"
               whileHover={{ scale: 1.05 }}
             >
               {nav("pricing")}
             </motion.a>
             <motion.a
               href="#testimonials"
-              className="text-gray-600 hover:text-blue-600 transition-colors duration-300 font-medium"
+              className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300 font-medium"
               whileHover={{ scale: 1.05 }}
             >
               {nav("testimonials")}
             </motion.a>
             <motion.a
               href="#contact"
-              className="text-gray-600 hover:text-blue-600 transition-colors duration-300 font-medium"
+              className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300 font-medium"
               whileHover={{ scale: 1.05 }}
             >
               {nav("contact")}
@@ -89,14 +89,14 @@ export default function Navbar() {
 
           {/* Mobile Menu Button */}
           <motion.button
-            className="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+            className="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300"
             onClick={toggleMobileMenu}
             whileTap={{ scale: 0.95 }}
           >
             {isMobileMenuOpen ? (
-              <X className="w-6 h-6" />
+              <X className="w-6 h-6 text-gray-600 dark:text-gray-300" />
             ) : (
-              <Menu className="w-6 h-6" />
+              <Menu className="w-6 h-6 text-gray-600 dark:text-gray-300" />
             )}
           </motion.button>
         </div>
@@ -108,12 +108,12 @@ export default function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden border-t bg-background/95 backdrop-blur-sm"
+            className="md:hidden border-t border-gray-200 dark:border-gray-700 bg-white/95 dark:bg-gray-800/95 backdrop-blur-sm transition-colors duration-300"
           >
             <nav className="px-4 py-6 space-y-4">
               <motion.a
                 href="#features"
-                className="block py-3 px-4 text-gray-600 hover:text-blue-600 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-colors duration-300 font-medium"
+                className="block py-3 px-4 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition-colors duration-300 font-medium"
                 onClick={closeMobileMenu}
                 whileTap={{ scale: 0.98 }}
               >
@@ -121,7 +121,7 @@ export default function Navbar() {
               </motion.a>
               <motion.a
                 href="#pricing"
-                className="block py-3 px-4 text-gray-600 hover:text-blue-600 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-colors duration-300 font-medium"
+                className="block py-3 px-4 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition-colors duration-300 font-medium"
                 onClick={closeMobileMenu}
                 whileTap={{ scale: 0.98 }}
               >
@@ -129,7 +129,7 @@ export default function Navbar() {
               </motion.a>
               <motion.a
                 href="#testimonials"
-                className="block py-3 px-4 text-gray-600 hover:text-blue-600 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-colors duration-300 font-medium"
+                className="block py-3 px-4 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition-colors duration-300 font-medium"
                 onClick={closeMobileMenu}
                 whileTap={{ scale: 0.98 }}
               >
@@ -137,7 +137,7 @@ export default function Navbar() {
               </motion.a>
               <motion.a
                 href="#contact"
-                className="block py-3 px-4 text-gray-600 hover:text-blue-600 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-colors duration-300 font-medium"
+                className="block py-3 px-4 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition-colors duration-300 font-medium"
                 onClick={closeMobileMenu}
                 whileTap={{ scale: 0.98 }}
               >
@@ -145,7 +145,7 @@ export default function Navbar() {
               </motion.a>
 
               {/* Mobile Controls */}
-              <div className="flex items-center justify-center gap-4 pt-4 border-t">
+              <div className="flex items-center justify-center gap-4 pt-4 border-t border-gray-200 dark:border-gray-700 transition-colors duration-300">
                 <LanguageSwitcher />
                 <ModeToggle />
               </div>

@@ -65,7 +65,7 @@ export default function PricingSection() {
       ],
       buttonText: t("plans.professional.buttonText"),
       popular: true,
-      color: "border-blue-500",
+      color: "border-blue-500 dark:border-blue-400",
     },
     {
       name: t("plans.enterprise.name"),
@@ -86,7 +86,7 @@ export default function PricingSection() {
       ],
       buttonText: t("plans.enterprise.buttonText"),
       popular: false,
-      color: "border-purple-500",
+      color: "border-purple-500 dark:border-purple-400",
     },
   ];
 
@@ -98,7 +98,7 @@ export default function PricingSection() {
   ];
 
   return (
-    <section className="py-16 md:py-20 bg-gray-50 dark:bg-gray-800">
+    <section className="py-16 md:py-20 bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -109,21 +109,21 @@ export default function PricingSection() {
           transition={{ duration: 0.6 }}
         >
           <motion.div
-            className="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200 text-sm font-medium mb-4"
+            className="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200 text-sm font-medium mb-4 transition-colors duration-300"
             whileHover={{ scale: 1.05 }}
           >
             <Zap className="w-4 h-4 me-2" />
             {t("badge")}
           </motion.div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4 leading-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4 leading-tight transition-colors duration-300">
             {t("title")}
             <span className="bg-gradient-to-r from-blue-600 via-cyan-600 to-teal-600 bg-clip-text text-transparent">
               {t("titleAccent")}
             </span>
           </h2>
 
-          <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed transition-colors duration-300">
             {t("description")}
           </p>
         </motion.div>
@@ -159,25 +159,25 @@ export default function PricingSection() {
               )}
 
               <Card
-                className={`h-full ${plan.color} ${
+                className={`h-full bg-white dark:bg-gray-900 ${plan.color} ${
                   plan.popular ? "border-2 md:scale-105" : "border"
-                } shadow-lg hover:shadow-xl transition-all duration-300 group`}
+                } shadow-lg hover:shadow-xl dark:hover:shadow-2xl transition-all duration-300 group`}
               >
                 <CardHeader className="text-center pb-6 md:pb-8">
-                  <h3 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                  <h3 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-2 transition-colors duration-300">
                     {plan.name}
                   </h3>
 
                   <div className="mb-4">
-                    <span className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white">
+                    <span className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white transition-colors duration-300">
                       ${plan.price}
                     </span>
-                    <span className="text-gray-600 dark:text-gray-400 ms-2">
+                    <span className="text-gray-600 dark:text-gray-400 ms-2 transition-colors duration-300">
                       /{plan.period}
                     </span>
                   </div>
 
-                  <p className="text-gray-600 dark:text-gray-300 text-sm md:text-base leading-relaxed">
+                  <p className="text-gray-600 dark:text-gray-300 text-sm md:text-base leading-relaxed transition-colors duration-300">
                     {plan.description}
                   </p>
                 </CardHeader>
@@ -189,10 +189,10 @@ export default function PricingSection() {
                     className="mb-6 md:mb-8"
                   >
                     <Button
-                      className={`w-full py-3 md:py-4 text-base md:text-lg font-medium ${
+                      className={`w-full py-3 md:py-4 text-base md:text-lg font-medium transition-all duration-300 ${
                         plan.popular
-                          ? "bg-blue-600 hover:bg-blue-700 text-white shadow-lg"
-                          : "bg-gray-900 hover:bg-gray-800 dark:bg-white dark:text-gray-900 dark:hover:bg-gray-100 text-white"
+                          ? "bg-blue-600 hover:bg-blue-700 text-white shadow-lg hover:shadow-xl"
+                          : "bg-gray-900 hover:bg-gray-800 dark:bg-white dark:text-gray-900 dark:hover:bg-gray-100 text-white shadow-lg hover:shadow-xl"
                       }`}
                     >
                       {plan.buttonText}
@@ -201,7 +201,7 @@ export default function PricingSection() {
                   </motion.div>
 
                   <div className="space-y-4">
-                    <h4 className="font-semibold text-gray-900 dark:text-white mb-3 text-sm md:text-base">
+                    <h4 className="font-semibold text-gray-900 dark:text-white mb-3 text-sm md:text-base transition-colors duration-300">
                       Everything included:
                     </h4>
 
@@ -217,8 +217,8 @@ export default function PricingSection() {
                             delay: index * 0.1 + featureIndex * 0.05,
                           }}
                         >
-                          <Check className="w-4 h-4 md:w-5 md:h-5 text-green-500 mt-0.5 me-3 flex-shrink-0" />
-                          <span className="text-gray-600 dark:text-gray-300 text-sm md:text-base leading-relaxed">
+                          <Check className="w-4 h-4 md:w-5 md:h-5 text-green-500 dark:text-green-400 mt-0.5 me-3 flex-shrink-0" />
+                          <span className="text-gray-600 dark:text-gray-300 text-sm md:text-base leading-relaxed transition-colors duration-300">
                             {feature}
                           </span>
                         </motion.li>
@@ -239,8 +239,8 @@ export default function PricingSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <div className="bg-white dark:bg-gray-900 rounded-2xl p-6 md:p-8 max-w-4xl mx-auto shadow-lg">
-            <h3 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-4 md:mb-6">
+          <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-2xl p-6 md:p-8 max-w-4xl mx-auto shadow-lg dark:shadow-2xl transition-all duration-300">
+            <h3 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-4 md:mb-6 transition-colors duration-300">
               {t("allPlansInclude")}
             </h3>
 
@@ -254,8 +254,8 @@ export default function PricingSection() {
                   viewport={{ once: true }}
                   transition={{ delay: 0.5 + index * 0.1 }}
                 >
-                  <Check className="w-4 h-4 md:w-5 md:h-5 text-green-500 flex-shrink-0" />
-                  <span className="text-gray-600 dark:text-gray-300 font-medium text-sm md:text-base text-center">
+                  <Check className="w-4 h-4 md:w-5 md:h-5 text-green-500 dark:text-green-400 flex-shrink-0" />
+                  <span className="text-gray-600 dark:text-gray-300 font-medium text-sm md:text-base text-center transition-colors duration-300">
                     {item}
                   </span>
                 </motion.div>
@@ -272,11 +272,11 @@ export default function PricingSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.6 }}
         >
-          <p className="text-gray-600 dark:text-gray-400 text-sm md:text-base leading-relaxed max-w-2xl mx-auto">
+          <p className="text-gray-600 dark:text-gray-400 text-sm md:text-base leading-relaxed max-w-2xl mx-auto transition-colors duration-300">
             {t("questionsText")}
             <motion.a
               href="#contact"
-              className="text-blue-600 dark:text-blue-400 font-medium hover:underline"
+              className="text-blue-600 dark:text-blue-400 font-medium hover:underline transition-colors duration-300"
               whileHover={{ scale: 1.05 }}
             >
               {t("contactSales")}

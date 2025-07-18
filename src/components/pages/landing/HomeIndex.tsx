@@ -18,7 +18,7 @@ export default function HomeIndex() {
   const footer = useTranslations("Footer");
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
       {/* Header */}
       <Navbar />
 
@@ -48,7 +48,7 @@ export default function HomeIndex() {
 
       {/* Footer */}
       <motion.footer
-        className="w-full border-t backdrop-blur-sm bg-background/95 flex-shrink-0"
+        className="w-full border-t border-gray-200 dark:border-gray-700 backdrop-blur-sm bg-white/95 dark:bg-gray-800/95 flex-shrink-0 transition-colors duration-300"
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4, delay: 0.6 }}
@@ -61,21 +61,21 @@ export default function HomeIndex() {
                 <div className="mb-4">
                   <Logo variant="full" size="md" animated={false} />
                 </div>
-                <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed transition-colors duration-300">
                   {footer("description")}
                 </p>
               </div>
 
               {/* Product Links */}
               <div>
-                <h3 className="font-semibold text-gray-900 dark:text-white mb-4">
+                <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-4 transition-colors duration-300">
                   {footer("product")}
                 </h3>
                 <ul className="space-y-3 text-sm">
                   <li>
                     <a
                       href="#features"
-                      className="text-gray-600 dark:text-gray-400 hover:text-blue-600 transition-colors"
+                      className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
                     >
                       {footer("links.features")}
                     </a>
@@ -83,7 +83,7 @@ export default function HomeIndex() {
                   <li>
                     <a
                       href="#pricing"
-                      className="text-gray-600 dark:text-gray-400 hover:text-blue-600 transition-colors"
+                      className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
                     >
                       {footer("links.pricing")}
                     </a>
@@ -91,7 +91,7 @@ export default function HomeIndex() {
                   <li>
                     <a
                       href="#"
-                      className="text-gray-600 dark:text-gray-400 hover:text-blue-600 transition-colors"
+                      className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
                     >
                       {footer("links.api")}
                     </a>
@@ -99,7 +99,7 @@ export default function HomeIndex() {
                   <li>
                     <a
                       href="#"
-                      className="text-gray-600 dark:text-gray-400 hover:text-blue-600 transition-colors"
+                      className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
                     >
                       {footer("links.integrations")}
                     </a>
@@ -109,14 +109,14 @@ export default function HomeIndex() {
 
               {/* Support Links */}
               <div>
-                <h3 className="font-semibold text-gray-900 dark:text-white mb-4">
+                <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-4 transition-colors duration-300">
                   {footer("support")}
                 </h3>
                 <ul className="space-y-3 text-sm">
                   <li>
                     <a
                       href="#"
-                      className="text-gray-600 dark:text-gray-400 hover:text-blue-600 transition-colors"
+                      className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
                     >
                       {footer("links.helpCenter")}
                     </a>
@@ -124,7 +124,7 @@ export default function HomeIndex() {
                   <li>
                     <a
                       href="#"
-                      className="text-gray-600 dark:text-gray-400 hover:text-blue-600 transition-colors"
+                      className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
                     >
                       {footer("links.contactUs")}
                     </a>
@@ -132,7 +132,7 @@ export default function HomeIndex() {
                   <li>
                     <a
                       href="#"
-                      className="text-gray-600 dark:text-gray-400 hover:text-blue-600 transition-colors"
+                      className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
                     >
                       {footer("links.status")}
                     </a>
@@ -140,7 +140,7 @@ export default function HomeIndex() {
                   <li>
                     <a
                       href="#"
-                      className="text-gray-600 dark:text-gray-400 hover:text-blue-600 transition-colors"
+                      className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
                     >
                       {footer("links.security")}
                     </a>
@@ -150,14 +150,14 @@ export default function HomeIndex() {
 
               {/* Company Links */}
               <div>
-                <h3 className="font-semibold text-gray-900 dark:text-white mb-4">
+                <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-4 transition-colors duration-300">
                   {footer("company")}
                 </h3>
                 <ul className="space-y-3 text-sm">
                   <li>
                     <a
                       href="#"
-                      className="text-gray-600 dark:text-gray-400 hover:text-blue-600 transition-colors"
+                      className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
                     >
                       {footer("links.about")}
                     </a>
@@ -165,7 +165,7 @@ export default function HomeIndex() {
                   <li>
                     <a
                       href="#"
-                      className="text-gray-600 dark:text-gray-400 hover:text-blue-600 transition-colors"
+                      className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
                     >
                       {footer("links.blog")}
                     </a>
@@ -173,7 +173,7 @@ export default function HomeIndex() {
                   <li>
                     <a
                       href="#"
-                      className="text-gray-600 dark:text-gray-400 hover:text-blue-600 transition-colors"
+                      className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
                     >
                       {footer("links.careers")}
                     </a>
@@ -181,7 +181,7 @@ export default function HomeIndex() {
                   <li>
                     <a
                       href="#"
-                      className="text-gray-600 dark:text-gray-400 hover:text-blue-600 transition-colors"
+                      className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
                     >
                       {footer("links.privacy")}
                     </a>
@@ -190,14 +190,14 @@ export default function HomeIndex() {
               </div>
             </div>
 
-            <div className="border-t border-gray-200 dark:border-gray-700 mt-8 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
-              <p className="text-sm text-gray-600 dark:text-gray-400 text-center sm:text-start">
+            <div className="border-t border-gray-200 dark:border-gray-700 mt-8 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 transition-colors duration-300">
+              <p className="text-sm text-gray-600 dark:text-gray-300 text-center sm:text-start transition-colors duration-300">
                 {footer("copyright")}
               </p>
               <div className="flex space-x-6">
                 <a
                   href="#"
-                  className="text-gray-400 hover:text-blue-600 transition-colors p-2"
+                  className="text-gray-400 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300 p-2"
                   aria-label="Facebook"
                 >
                   <svg
@@ -214,7 +214,7 @@ export default function HomeIndex() {
                 </a>
                 <a
                   href="#"
-                  className="text-gray-400 hover:text-blue-600 transition-colors p-2"
+                  className="text-gray-400 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300 p-2"
                   aria-label="Twitter"
                 >
                   <svg
@@ -227,7 +227,7 @@ export default function HomeIndex() {
                 </a>
                 <a
                   href="#"
-                  className="text-gray-400 hover:text-blue-600 transition-colors p-2"
+                  className="text-gray-400 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300 p-2"
                   aria-label="LinkedIn"
                 >
                   <svg
