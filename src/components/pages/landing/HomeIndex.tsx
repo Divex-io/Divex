@@ -6,7 +6,6 @@ import { useTranslations } from "next-intl";
 import Logo from "@/components/common/Logo";
 import Navbar from "@/components/common/Navbar";
 
-// Import all the new section components
 import HeroSection from "@/components/pages/landing/HeroSection";
 import FeaturesSection from "@/components/pages/landing/FeaturesSection";
 import PricingSection from "@/components/pages/landing/PricingSection";
@@ -14,7 +13,6 @@ import TestimonialsSection from "@/components/pages/landing/TestimonialsSection"
 import CTASection from "@/components/pages/landing/CTASection";
 
 export default function HomeIndex() {
-  const t = useTranslations("Index");
   const footer = useTranslations("Footer");
 
   return (

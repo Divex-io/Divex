@@ -3,7 +3,6 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { Waves, MapPin, Users, Calendar } from "lucide-react";
-import Link from "next/link";
 import { useTranslations } from "next-intl";
 import WateryBackground from "@/components/common/WateryBackground";
 

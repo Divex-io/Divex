@@ -201,7 +201,7 @@ export default function TestimonialsSection() {
 
                   {/* Testimonial Text */}
                   <blockquote className="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed transition-colors duration-300">
-                    "{testimonial.text}"
+                    {testimonial.text}
                   </blockquote>
 
                   {/* Metric Highlight */}
