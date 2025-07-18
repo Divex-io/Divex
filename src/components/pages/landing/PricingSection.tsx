@@ -130,7 +130,7 @@ export default function PricingSection() {
 
         {/* Pricing Cards */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto pt-8"
           variants={ANIMATION_VARIANTS.container}
           initial="hidden"
           whileInView="visible"
@@ -145,7 +145,7 @@ export default function PricingSection() {
             >
               {plan.popular && (
                 <motion.div
-                  className="absolute -top-8 z-10"
+                  className="absolute -top-2 md:-top-8 start-2 z-10"
                   initial={{ opacity: 0, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
