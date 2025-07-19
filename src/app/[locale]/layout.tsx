@@ -28,13 +28,11 @@ export default async function RootLayout({
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
 }) {
-  // Ensure that the incoming `locale` is valid
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
 
-  // Enable static rendering
   setRequestLocale(locale);
 
   const isHebrew = locale === "he";
@@ -50,32 +48,16 @@ export default async function RootLayout({
           href="https://fonts.gstatic.com"
           crossOrigin="anonymous"
         />
-        <link
-          rel="canonical"
-          href={`https://next-app-i18n-starter.vercel.app`}
-        />
+        <link rel="canonical" href={`https://www.divex.io`} />
         <link
           rel="alternate"
           hrefLang="x-default"
-          href="https://next-app-i18n-starter.vercel.app"
+          href="https://www.divex.io"
         />
-        <link
-          rel="alternate"
-          hrefLang="en"
-          href="https://next-app-i18n-starter.vercel.app/en"
-        />
-        <link
-          rel="alternate"
-          hrefLang="he"
-          href="https://next-app-i18n-starter.vercel.app/he"
-        />
-        <link
-          rel="alternate"
-          hrefLang="zh"
-          href="https://next-app-i18n-starter.vercel.app/zh"
-        />
+        <link rel="alternate" hrefLang="en" href="https://www.divex.io/en" />
+        <link rel="alternate" hrefLang="he" href="https://www.divex.io/he" />
         <meta name="keywords" content={t("keywords")} />
-        <meta name="author" content="Sovers Tonmoy Pandey" />
+        <meta name="author" content="Alon & Yiftach" />
         <meta name="robots" content="index, follow" />
         <script
           {...jsonLdScriptProps<WebSite>({
@@ -83,7 +65,7 @@ export default async function RootLayout({
             "@type": "WebSite",
             name: t("title"),
             description: t("description"),
-            url: "https://next-app-i18n-starter.vercel.app",
+            url: "https://www.divex.io",
             inLanguage: locale,
           })}
         />
@@ -131,16 +113,9 @@ export async function generateMetadata({
     openGraph: {
       title: t("title"),
       description: t("description"),
-      url: `https://next-app-i18n-starter.vercel.app`,
-      siteName: "Next.js i18n Template",
-      images: [
-        {
-          url: "https://next-app-i18n-starter.vercel.app/og-image.png",
-          width: 1200,
-          height: 630,
-          alt: t("title"),
-        },
-      ],
+      url: `https://www.divex.io`,
+      siteName: "Divex",
+      images: [],
       locale: locale,
       type: "website",
     },
@@ -148,17 +123,14 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: t("title"),
       description: t("description"),
-      images: ["https://next-app-i18n-starter.vercel.app/og-image.png"],
+      images: [],
       creator: "@s0ver5",
     },
     alternates: {
-      canonical: `https://next-app-i18n-starter.vercel.app`,
+      canonical: `https://www.divex.io`,
       languages: {
-        en: "https://next-app-i18n-starter.vercel.app/en",
-        ar: "https://next-app-i18n-starter.vercel.app/ar",
-        zh: "https://next-app-i18n-starter.vercel.app/zh",
-        es: "https://next-app-i18n-starter.vercel.app/es",
-        ja: "https://next-app-i18n-starter.vercel.app/jp",
+        en: "https://www.divex.io/en",
+        he: "https://www.divex.io/he",
       },
     },
     robots: {
